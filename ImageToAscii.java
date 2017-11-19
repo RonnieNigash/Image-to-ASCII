@@ -89,5 +89,6 @@ class ImageToAscii {
 		reader.close();
     	ImageToAscii obj = new ImageToAscii();
     	obj.convertToAscii(path2img); //Put your File name.jpg here !! :D
+    	System.out.println("Done");
     }
 }
