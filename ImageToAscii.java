@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.image.*;
 import java.io.*;
+import java.util.Scanner;
+
 import javax.imageio.*;
 
 
@@ -11,7 +13,6 @@ class ImageToAscii {
     double pixval;
     PrintWriter printwrite;
     FileWriter filewrite;
-
 
     public ImageToAscii() {
         try {
@@ -82,7 +83,11 @@ class ImageToAscii {
     }
     
     public static void main(String[] args) {
+    	Scanner reader = new Scanner (System.in);
+		System.out.print("Path to image: ");
+		String path2img = reader.next();
+		reader.close();
     	ImageToAscii obj = new ImageToAscii();
-    	obj.convertToAscii("cat.jpg"); //Put your File name.jpg here !! :D
+    	obj.convertToAscii(path2img); //Put your File name.jpg here !! :D
     }
 }
