@@ -1,7 +1,7 @@
 Image-to-ASCII
 ==============
 
-Takes any jpg image and converts to precious artwork
+Takes any image and converts to precious artwork
 
 
 Instructions:
