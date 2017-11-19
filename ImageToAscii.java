@@ -2,32 +2,23 @@ import java.awt.Color;
 import java.awt.image.*;
 import java.io.*;
 import java.util.Scanner;
-
 import javax.imageio.*;
-
-
-class ImageToAscii {
-
-
-    BufferedImage img;
-    double pixval;
-    PrintWriter printwrite;
-    FileWriter filewrite;
-
-    public ImageToAscii() {
+	class ImageToAscii {
+		BufferedImage img;
+		double pixval;
+		PrintWriter printwrite;
+		FileWriter filewrite;
+	public ImageToAscii() {
         try {
-            printwrite = new PrintWriter(filewrite = new FileWriter("asciiart.txt",true)); // The name of the finished product
+            printwrite = new PrintWriter(filewrite = new FileWriter("asciiart.txt",true));
         } catch (IOException ex) {
         }
     }
-    
     public void convertToAscii(String imgname) {
         try {
             img = ImageIO.read(new File(imgname));
         } catch (IOException e) {
         }
-
-
         for (int h = 0; h < img.getHeight(); h++)
         {
             for (int w = 0; w < img.getWidth(); w++)
@@ -44,8 +35,6 @@ class ImageToAscii {
             }
         }
     }
-
-
     public String strChar(double n)
     {
         String stringy = " ";
@@ -70,8 +59,6 @@ class ImageToAscii {
         }
         return stringy;
     }
-
-
     public void print(String stringy)
     {
         try {
@@ -81,14 +68,13 @@ class ImageToAscii {
         } catch (Exception ex) {
         }
     }
-    
     public static void main(String[] args) {
     	Scanner reader = new Scanner (System.in);
 		System.out.print("Path to image: ");
 		String path2img = reader.next();
 		reader.close();
     	ImageToAscii obj = new ImageToAscii();
-    	obj.convertToAscii(path2img); //Put your File name.jpg here !! :D
+    	obj.convertToAscii(path2img);
     	System.out.println("Done");
     }
 }
